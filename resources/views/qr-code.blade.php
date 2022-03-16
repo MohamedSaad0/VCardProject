@@ -8,6 +8,9 @@
 </head>
 <body>
     {!! QrCode::size($size)->generate($url) !!}
+     {!!
+    QrCode::format('png')->size($size)->generate($url,storage_path($url.'.png'))    
+    !!}
 
 </body>
 </html>
