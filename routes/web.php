@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QrCodeGeneratorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('api/qr-code/{size}/{_user}', [QrCodeGeneratorController::class, 'index']);
