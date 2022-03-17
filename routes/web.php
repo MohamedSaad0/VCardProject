@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('api/qr-code/{size}/{_user}', [QrCodeGeneratorController::class, 'index']);
-Route::post('api/qr-code/{size}/{_user}', [QrCodeGeneratorController::class, 'store']);
+Route::get('qr-code/{_user}', [QrCodeGeneratorController::class, 'index']);
+Route::post('qr-code/{size}/{_user}', [QrCodeGeneratorController::class, 'store']);
 
