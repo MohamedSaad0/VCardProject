@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    {!! QrCode::size($size)->generate($url) !!}
+    <img width="250" src="../../../storage/{{$user}}.png" />
+    <!-- {!! QrCode::size($size)->generate($url) !!} -->
      {!!
-    QrCode::format('png')->size($size)->generate($url,storage_path($url.'.png'))    
+    QrCode::format('png')->size($size)->generate($url,storage_path($user.'.png'))    
     !!}
 
 </body>

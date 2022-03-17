@@ -17,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('api/qr-code/{size}/{_user}', [QrCodeGeneratorController::class, 'index']);
+Route::post('api/qr-code/{size}/{_user}', [QrCodeGeneratorController::class, 'store']);
+
