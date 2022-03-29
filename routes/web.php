@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\QrCodeGeneratorController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('qr-code/{_user}', [QrCodeGeneratorController::class, 'index']);
 Route::post('qr-code/{size}/{_user}', [QrCodeGeneratorController::class, 'store']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
 
